@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
+
 
 export const metadata: Metadata = {
   title: "Gallery | Rishi Exports - Premium Marble Exporters",
@@ -155,7 +155,7 @@ export default function Gallery() {
                 Our marble is sourced from the finest quarries in India, known for their exceptional quality and distinctive characteristics. We carefully select each block based on color consistency, veining patterns, and structural integrity.
               </p>
               <p className="text-muted-foreground">
-                Whether you're looking for elegant white marble, sophisticated black marble, or any other variety, you can trust that our products will add timeless beauty and value to your projects.
+                Whether you&apos;re looking for elegant white marble, sophisticated black marble, or any other variety, you can trust that our products will add timeless beauty and value to your projects.
               </p>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">

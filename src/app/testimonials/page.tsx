@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
+
 import { Quote } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -131,7 +131,7 @@ export default function Testimonials() {
                 <Quote className="text-primary/20 absolute top-6 left-6 h-16 w-16" />
                 <div className="relative z-10">
                   <p className="text-lg italic mb-8 text-foreground/90">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="h-16 w-16 rounded-full overflow-hidden mr-4">
@@ -169,7 +169,7 @@ export default function Testimonials() {
                     {renderStars(testimonial.rating)}
                   </div>
                   <p className="italic text-foreground/90 mb-6 flex-grow">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div>
                     <Separator className="my-4" />
@@ -208,7 +208,7 @@ export default function Testimonials() {
         <div className="container max-w-screen-xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Share Your Experience</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            We value feedback from all our clients. If you've worked with Rishi Exports and would like to share your experience, we'd love to hear from you.
+            We value feedback from all our clients. If you&apos;ve worked with Rishi Exports and would like to share your experience, we&apos;d love to hear from you.
           </p>
           <Button asChild size="lg" className="font-medium">
             <Link href="/contact">Submit Your Testimonial</Link>

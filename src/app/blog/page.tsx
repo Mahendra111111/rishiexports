@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Home } from "lucide-react";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
+
 
 export const metadata: Metadata = {
   title: "Blog | Marblex - Premium Marble Exporters",

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+
+
 import { Home } from "lucide-react";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
+
 
 export const metadata: Metadata = {
   title: "Services | Marblex - Premium Marble Exporters",
@@ -117,7 +117,7 @@ export default function Services() {
               <div key={index} className="relative">
                 <div className="bg-slate-700 p-8 rounded-lg">
                   <p className="italic mb-6">
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are going to use a passage of Lorem Ipsum.
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="flex">

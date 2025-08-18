@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+
 import { Home, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 import PlaceholderImage from "@/components/PlaceholderImage";
@@ -122,10 +122,10 @@ export default function CarpetsRugs() {
                 <div>
                   <h2 className="text-2xl font-bold mb-4">Choose Water Resistant Flooring At Your Home</h2>
                   <p className="text-muted-foreground mb-6">
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since.
                   </p>
                   <p className="text-muted-foreground">
-                    Marblex is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                    Marblex is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since.
                   </p>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function CarpetsRugs() {
               <div className="mt-12">
                 <h3 className="text-xl font-bold mb-4">Our Best Team Expert</h3>
                 <p className="text-muted-foreground mb-6">
-                  Marblex is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is interior dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                  Marblex is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is interior dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since.
                 </p>
                 
                 <div className="bg-amber-500 text-white p-6 rounded-lg">

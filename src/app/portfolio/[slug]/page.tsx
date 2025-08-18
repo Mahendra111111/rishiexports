@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Home } from "lucide-react";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
+
 
 export const metadata: Metadata = {
   title: "Portfolio Item | Rishi Exports - Premium Marble Exporters",
@@ -18,7 +18,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PortfolioItem({ params }: { params: { slug: string } }) {
+export default async function PortfolioItem({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _ = slug; // Available for dynamic content loading
   return (
     <>
       {/* Hero Section */}
@@ -85,18 +88,18 @@ export default function PortfolioItem({ params }: { params: { slug: string } }) 
 
           {/* Project Description */}
           <div className="prose prose-lg max-w-none mb-12">
-            <h2 className="text-3xl font-bold mb-6">Natural Stone Can Increase Your Home's Value</h2>
+            <h2 className="text-3xl font-bold mb-6">Natural Stone Can Increase Your Home&apos;s Value</h2>
             <p className="text-muted-foreground mb-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
 
             <p className="text-muted-foreground mb-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
 
             <h3 className="text-2xl font-bold mt-10 mb-6">Overview & Challenges</h3>
             <p className="text-muted-foreground mb-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
 

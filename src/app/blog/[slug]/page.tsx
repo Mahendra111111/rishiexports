@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Home, ChevronRight, MessageCircle } from "lucide-react";
+import { Home, ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
@@ -97,7 +97,10 @@ const meta = [
   "WordPress.org"
 ];
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _ = slug; // Available for dynamic content loading
   return (
     <>
       {/* Hero Section */}
@@ -175,7 +178,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 </p>
 
                 <blockquote className="border-l-4 border-amber-500 pl-4 italic my-8 py-2 text-lg">
-                  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                  &ldquo;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.&rdquo;
                 </blockquote>
 
                 <p className="text-muted-foreground">

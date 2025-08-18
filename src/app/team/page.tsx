@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Home, Facebook, Twitter, Instagram, Mail } from "lucide-react";
+
+
+import { Home, Facebook, Twitter, Instagram } from "lucide-react";
 import type { Metadata } from "next";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
@@ -238,7 +238,7 @@ export default function Team() {
               </div>
               <div className="md:w-2/3">
                 <p className="italic mb-6">
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.
+                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are going to use a passage of Lorem Ipsum.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex">

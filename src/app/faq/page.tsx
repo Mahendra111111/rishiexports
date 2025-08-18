@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
+
 
 export const metadata: Metadata = {
   title: "FAQ | Rishi Exports - Premium Marble Exporters",
@@ -155,7 +155,7 @@ export default function FAQ() {
           <div className="max-w-3xl mx-auto mt-16 text-center">
             <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
             <p className="text-muted-foreground mb-8">
-              If you couldn't find the answer to your question, please don't hesitate to contact us directly. Our team is ready to assist you.
+              If you couldn&apos;t find the answer to your question, please don&apos;t hesitate to contact us directly. Our team is ready to assist you.
             </p>
             <Button asChild size="lg">
               <Link href="/contact">Contact Us</Link>

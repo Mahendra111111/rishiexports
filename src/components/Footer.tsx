@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Separator } from "@/components/ui/separator";
+
 import { Phone, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
