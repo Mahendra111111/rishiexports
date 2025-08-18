@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: "Testimonials | Rishi Exports - Premium Marble Exporters",
   description: "Read what our clients say about their experience working with Rishi Exports for premium marble and natural stone products.",
   keywords: "Rishi Exports testimonials, marble customer reviews, natural stone client feedback, marble exporter reviews",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function Testimonials() {

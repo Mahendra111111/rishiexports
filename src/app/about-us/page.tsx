@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "About Us | Marblex - Premium Marble Exporters",
   description: "Learn about Marblex, a leading exporter of premium marble products with over 15 years of experience in the natural stone industry.",
   keywords: "about Marblex, marble company history, marble exporters India, natural stone suppliers",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function AboutUs() {

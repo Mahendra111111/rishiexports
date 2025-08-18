@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Services | Marblex - Premium Marble Exporters",
   description: "Explore our comprehensive range of marble and natural stone services including flooring, countertops, and custom solutions.",
   keywords: "marble services, flooring services, marble installation, stone countertops, custom marble solutions",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function Services() {

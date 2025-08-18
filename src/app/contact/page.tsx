@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: "Contact Us | Marblex - Premium Marble Exporters",
   description: "Get in touch with Marblex for all your marble and natural stone requirements. Contact us for quotes, inquiries, and support.",
   keywords: "contact Marblex, marble export contact, stone supplier contact, marble inquiry",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function Contact() {

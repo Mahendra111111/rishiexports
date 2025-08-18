@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Carpets & Rugs | Marblex - Premium Marble Exporters",
   description: "Explore our premium carpets and rugs collection featuring high-quality materials and expert craftsmanship.",
   keywords: "carpets, rugs, premium carpets, luxury rugs, home decor, flooring solutions",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function CarpetsRugs() {

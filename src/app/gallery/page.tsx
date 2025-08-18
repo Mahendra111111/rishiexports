@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Gallery | Rishi Exports - Premium Marble Exporters",
   description: "Explore our gallery of premium marble varieties including white, beige, green, black, and pink marble sourced from the finest quarries in India.",
   keywords: "marble gallery, marble varieties, white marble, beige marble, green marble, black marble, pink marble",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function Gallery() {

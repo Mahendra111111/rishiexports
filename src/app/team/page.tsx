@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Our Team | Marblex - Premium Marble Exporters",
   description: "Meet the dedicated professionals behind Marblex who bring expertise, passion, and commitment to delivering premium marble products worldwide.",
   keywords: "Marblex team, marble experts, stone industry professionals, management team, marble specialists",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function Team() {

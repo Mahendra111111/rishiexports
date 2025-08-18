@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Blog | Marblex - Premium Marble Exporters",
   description: "Explore our blog for insights on marble trends, maintenance tips, industry news, and project showcases.",
   keywords: "marble blog, natural stone trends, marble maintenance, stone industry news, marble design ideas",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 const blogPosts = [

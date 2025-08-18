@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: "Portfolio Item | Rishi Exports - Premium Marble Exporters",
   description: "Detailed view of our marble and natural stone project.",
   keywords: "marble project details, stone installation showcase, marble work portfolio",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function PortfolioItem({ params }: { params: { slug: string } }) {

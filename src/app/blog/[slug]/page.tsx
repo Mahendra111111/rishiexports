@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Blog Post | Marblex - Premium Marble Exporters",
   description: "Read our detailed blog post about marble and natural stone topics.",
   keywords: "marble blog post, natural stone article, marble industry insights",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 // This would typically come from a CMS or database

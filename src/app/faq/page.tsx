@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "FAQ | Rishi Exports - Premium Marble Exporters",
   description: "Find answers to frequently asked questions about our marble products, export services, shipping, and more.",
   keywords: "marble FAQ, marble export questions, marble shipping FAQ, marble quality questions",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function FAQ() {

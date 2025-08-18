@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Our History | Marblex - Premium Marble Exporters",
   description: "Explore the journey of Marblex from its humble beginnings to becoming a leading exporter of premium marble products worldwide.",
   keywords: "Marblex history, marble company timeline, marble industry evolution, natural stone business history",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function History() {
