@@ -195,7 +195,7 @@ export default function Team() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 md:py-24 bg-amber-500 text-white">
+      <section className="py-16 md:py-24 bg-amber">
         <div className="container max-w-screen-xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -229,11 +229,12 @@ export default function Team() {
           
           <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
             <div className="flex flex-col md:flex-row gap-8">
-              <div className="md:w-1/3">
-                <PlaceholderImage 
-                  text="Testimonial Image" 
-                  height="100%" 
-                  className="rounded-lg"
+              <div className="md:w-1/3 relative h-[300px]">
+                <Image
+                  src="/images/average.jpg"
+                  alt="Client Testimonial"
+                  fill
+                  className="object-cover rounded-lg"
                 />
               </div>
               <div className="md:w-2/3">
@@ -277,26 +278,27 @@ export default function Team() {
             {[
               {
                 title: "Choose Water Resistant Flooring At Your Home",
-                image: "water-resistant-flooring",
+                image: "/images/blog/water-resistant-flooring.jpg",
                 category: "STONE"
               },
               {
                 title: "What Kind Of Flooring Was Best For My Art Studio?",
-                image: "art-studio-flooring",
+                image: "/images/blog/art-studio-flooring.jpg", 
                 category: "TILES"
               },
               {
                 title: "Wooden Texture Flooring Used Extensively",
-                image: "wooden-flooring",
+                image: "/images/blog/wooden-flooring.jpg",
                 category: "WOODEN"
               }
             ].map((post, index) => (
               <div key={index} className="group">
                 <div className="relative h-64 mb-6 overflow-hidden rounded-lg">
-                  <PlaceholderImage 
-                    text={post.image} 
-                    height="100%" 
-                    className="transition-transform duration-300 group-hover:scale-110"
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-amber-500 text-white px-4 py-1 text-sm font-medium rounded">

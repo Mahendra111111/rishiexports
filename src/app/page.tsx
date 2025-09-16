@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function Home() {
@@ -10,38 +10,42 @@ export default function Home() {
       {/* Hero Section with Video Background */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          autoPlay
+          loop
+          muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src="/videos/marble background video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
-        
+        </video>  
+
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
-        
+
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
           <div className="max-w-4xl">
             <div className="mb-6">
               <div className="flex items-center justify-center gap-4 mb-2">
                 <div className="h-px w-12 bg-amber-500"></div>
-                <h2 className="text-amber-500 font-medium tracking-wider uppercase">Welcome to Rishi Exports</h2>
+                <h2 className="text-amber-500 font-medium tracking-wider uppercase">
+                  Welcome to Rishi Exports
+                </h2>
                 <div className="h-px w-12 bg-amber-500"></div>
               </div>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-              High Performance<br />Natural Stone Panels
+              High Performance
+              <br />
+              Natural Stone Panels
             </h1>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button 
-                asChild 
+              <Button
+                asChild
                 className="bg-amber-500 hover:bg-amber-600 text-white border-0 px-4 py-6 text-base font-medium"
               >
                 <Link href="/about-us" className="flex items-center">
@@ -49,10 +53,10 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              
-              <Button 
-                asChild 
-                variant="outline" 
+
+              <Button
+                asChild
+                variant="outline"
                 className="border-white text-black hover:bg-white/10 hover:text-white px-4 py-6 text-base font-medium"
               >
                 <Link href="/contact" className="flex items-center">
@@ -83,7 +87,9 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="h-px w-12 bg-amber-500"></div>
-                <h2 className="text-amber-500 font-medium tracking-wider uppercase">About Us</h2>
+                <h2 className="text-amber-500 font-medium tracking-wider uppercase">
+                  About Us
+                </h2>
               </div>
 
               <h3 className="text-3xl md:text-4xl font-bold mb-6">
@@ -91,13 +97,17 @@ export default function Home() {
               </h3>
 
               <p className="text-muted-foreground mb-8">
-                At Rishi Exports stone, we offer quality stone products in the form of tiles and slabs selected from all over the world to enhance your home project.
+                At Rishi Exports stone, we offer quality stone products in the
+                form of tiles and slabs selected from all over the world to
+                enhance your home project.
               </p>
 
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Features List 1 */}
                 <div>
-                  <h4 className="text-xl font-semibold mb-4">Marble At A Glance</h4>
+                  <h4 className="text-xl font-semibold mb-4">
+                    Marble At A Glance
+                  </h4>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-amber-500" />
@@ -120,7 +130,9 @@ export default function Home() {
 
                 {/* Features List 2 */}
                 <div>
-                  <h4 className="text-xl font-semibold mb-4">Marble Slab Creamery</h4>
+                  <h4 className="text-xl font-semibold mb-4">
+                    Marble Slab Creamery
+                  </h4>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-amber-500" />
@@ -153,9 +165,13 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="h-px w-12 bg-amber-500"></div>
-                <h2 className="text-amber-500 font-medium tracking-wider uppercase">Latest Work</h2>
+                <h2 className="text-amber-500 font-medium tracking-wider uppercase">
+                  Latest Work
+                </h2>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold">Discover Our Creation</h3>
+              <h3 className="text-3xl md:text-4xl font-bold">
+                Discover Our Creation
+              </h3>
             </div>
             <Button asChild variant="outline" className="hidden md:flex">
               <Link href="/portfolio" className="flex items-center">
@@ -164,33 +180,36 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: "Kitchen Countertop",
                 image: "/images/portfolio/kitchen-1.jpg",
-                category: "RESIDENTIAL"
+                category: "RESIDENTIAL",
               },
               {
                 title: "Office Reception",
                 image: "/images/portfolio/office-1.jpg",
-                category: "COMMERCIAL"
+                category: "COMMERCIAL",
               },
               {
                 title: "Modern Kitchen",
                 image: "/images/portfolio/kitchen-large.jpg",
-                category: "RESIDENTIAL"
+                category: "RESIDENTIAL",
               },
               {
                 title: "Bathroom Design",
                 image: "/images/portfolio/bathroom-1.jpg",
-                category: "RESIDENTIAL"
-              }
+                category: "RESIDENTIAL",
+              },
             ].map((project, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg">
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg"
+              >
                 <div className="relative h-[300px]">
-                  <Image 
+                  <Image
                     src={project.image}
                     alt={project.title}
                     fill
@@ -199,14 +218,18 @@ export default function Home() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <span className="text-sm font-medium text-amber-500">{project.category}</span>
-                    <h4 className="text-xl font-semibold mt-2">{project.title}</h4>
+                    <span className="text-sm font-medium text-amber-500">
+                      {project.category}
+                    </span>
+                    <h4 className="text-xl font-semibold mt-2">
+                      {project.title}
+                    </h4>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
+
           <div className="mt-8 text-center md:hidden">
             <Button asChild variant="outline">
               <Link href="/portfolio">View All Projects</Link>
@@ -221,10 +244,14 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px w-12 bg-amber-500"></div>
-              <h2 className="text-amber-500 font-medium tracking-wider uppercase">Our Testimonial</h2>
+              <h2 className="text-amber-500 font-medium tracking-wider uppercase">
+                Our Testimonial
+              </h2>
               <div className="h-px w-12 bg-amber-500"></div>
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h3>
+            <h3 className="text-3xl md:text-4xl font-bold">
+              What Our Clients Say
+            </h3>
           </div>
 
           <div className="max-w-3xl mx-auto relative">
@@ -242,7 +269,11 @@ export default function Home() {
               <div className="md:col-span-2 text-center md:text-left">
                 <div className="mb-8">
                   <p className="text-lg text-muted-foreground">
-                    Rishi Exports should look for ones that are specific, detailed, and highlight the unique benefits of working with the company. This can include aspects such as the quality of the marble products and excellent customer service Rishi Exports can these reviews to differentiate itself
+                    Rishi Exports should look for ones that are specific,
+                    detailed, and highlight the unique benefits of working with
+                    the company. This can include aspects such as the quality of
+                    the marble products and excellent customer service Rishi
+                    Exports can these reviews to differentiate itself
                   </p>
                 </div>
 
@@ -276,9 +307,13 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="h-px w-12 bg-amber-500"></div>
-                <h2 className="text-amber-500 font-medium tracking-wider uppercase">Latest News</h2>
+                <h2 className="text-amber-500 font-medium tracking-wider uppercase">
+                  Latest News
+                </h2>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold">Watch Our Latest Blog</h3>
+              <h3 className="text-3xl md:text-4xl font-bold">
+                Watch Our Latest Blog
+              </h3>
             </div>
             <Button asChild variant="outline" className="hidden md:flex">
               <Link href="/blog" className="flex items-center">
@@ -287,7 +322,7 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
@@ -295,22 +330,22 @@ export default function Home() {
                 image: "/images/blog/marble-staircase.jpg",
                 category: "MARBLE",
                 date: "NOVEMBER 2, 2022",
-                comments: 0
+                comments: 0,
               },
               {
                 title: "Choose Water Resistant Flooring At Your Home",
                 image: "/images/blog/water-resistant-flooring.jpg",
                 category: "TILES",
                 date: "NOVEMBER 2, 2022",
-                comments: 0
+                comments: 0,
               },
               {
                 title: "Wooden Texture Flooring Used Extensively",
                 image: "/images/blog/wooden-flooring.jpg",
                 category: "WOODEN",
                 date: "NOVEMBER 2, 2022",
-                comments: 0
-              }
+                comments: 0,
+              },
             ].map((post, index) => (
               <Card key={index} className="overflow-hidden">
                 <div className="relative h-[240px]">
@@ -342,7 +377,7 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          
+
           <div className="mt-8 text-center md:hidden">
             <Button asChild variant="outline">
               <Link href="/blog">View All Posts</Link>

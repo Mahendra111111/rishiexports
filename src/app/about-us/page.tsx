@@ -349,26 +349,27 @@ export default function AboutUs() {
             {[
               {
                 title: "How To Create Marble Staircase With Lighting",
-                image: "marble-staircase",
+                image: "/images/blog/marble-staircase.jpg",
                 category: "MARBLE"
               },
               {
-                title: "Choose Water Resistant Flooring At Your Home",
-                image: "water-resistant-flooring",
+                title: "Choose Water Resistant Flooring At Your Home", 
+                image: "/images/blog/water-resistant-flooring.jpg",
                 category: "TILES"
               },
               {
                 title: "Wooden Texture Flooring Used Extensively",
-                image: "wooden-flooring",
+                image: "/images/blog/wooden-flooring.jpg", 
                 category: "WOODEN"
               }
             ].map((post, index) => (
               <div key={index} className="group">
                 <div className="relative h-64 mb-6 overflow-hidden rounded-lg">
-                  <PlaceholderImage 
-                    text={post.image} 
-                    height="100%" 
-                    className="transition-transform duration-300 group-hover:scale-110"
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-amber-500 text-white px-4 py-1 text-sm font-medium rounded">

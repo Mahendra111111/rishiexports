@@ -23,9 +23,11 @@ export default function PlaceholderImage({
       style={{ 
         width: typeof width === 'number' ? `${width}px` : width,
         height: typeof height === 'number' ? `${height}px` : height,
+        minHeight: '100%',
+        objectFit: 'cover',
       }}
     >
-      <span className="text-center px-4">{text}</span>
+      <span className="text-center px-4 text-sm sm:text-base">{text}</span>
     </div>
   );
-} 
+}

@@ -85,9 +85,15 @@ export default function Services() {
                 <h3 className="text-white text-xl font-bold">Calacatta Lincoln Marble</h3>
               </div>
             </div>
-            
-            <div className="relative h-64 rounded-lg overflow-hidden">
-              <div className="bg-slate-700 h-full flex items-center justify-center p-6">
+
+             <div className="relative h-64 rounded-lg overflow-hidden group">
+              <Image
+                src="/images/marble1.jpg"
+                alt="Limestone Ceramics Tile"
+                fill
+                className="object-cover brightness-[0.8] group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/30 flex items-end p-6">
                 <h3 className="text-white text-xl font-bold">Limestone Ceramics Tile</h3>
               </div>
             </div>
@@ -208,7 +214,7 @@ export default function Services() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 md:py-24 bg-amber-500 text-white">
+      <section className="py-16 md:py-24">
         <div className="container max-w-screen-xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[

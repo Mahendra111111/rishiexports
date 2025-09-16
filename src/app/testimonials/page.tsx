@@ -217,7 +217,7 @@ export default function Testimonials() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 md:py-20 bg-primary text-primary-foreground">
+      <section className="py-16 md:py-20">
         <div className="container max-w-screen-xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Experience Our Excellence Yourself</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
@@ -227,7 +227,7 @@ export default function Testimonials() {
             <Button asChild size="lg" variant="secondary" className="font-medium">
               <Link href="/contact">Contact Us</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-medium border-white/30 hover:bg-white/10">
+            <Button asChild size="lg" variant="outline" className="font-medium border-white/30 hover:bg-white/10 bg-gray-800 text-white">
               <Link href="/services">Explore Our Services</Link>
             </Button>
           </div>
