@@ -26,7 +26,7 @@ export default function Footer() {
       
       setSubscriptionStatus("success");
       setEmail("");
-    } catch (error) {
+    } catch {
       setSubscriptionStatus("error");
     } finally {
       setIsSubmitting(false);

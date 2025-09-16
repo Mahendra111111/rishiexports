@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import { Home, Facebook, Twitter, Instagram } from "lucide-react";
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/PlaceholderImage";
 
 export const metadata: Metadata = {
   title: "Our Team | Marblex - Premium Marble Exporters",
