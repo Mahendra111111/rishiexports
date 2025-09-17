@@ -5,9 +5,20 @@ import { Home, ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
+export function generateStaticParams() {
+  return [
+    { slug: "how-to-create-marble-staircase-with-lighting" },
+    { slug: "in-home-choose-a-light-floor-if-at-all-possible" },
+    { slug: "how-to-protect-a-bathroom-with-marble-surface" },
+    { slug: "choose-water-resistant-flooring-at-your-home" },
+    { slug: "what-kind-of-flooring-was-best-for-my-art-studio" },
+  ];
+}
+
 export const metadata: Metadata = {
   title: "Blog Post | Marblex - Premium Marble Exporters",
-  description: "Read our detailed blog post about marble and natural stone topics.",
+  description:
+    "Read our detailed blog post about marble and natural stone topics.",
   keywords: "marble blog post, natural stone article, marble industry insights",
   robots: {
     index: false,
@@ -25,32 +36,32 @@ const recentPosts = [
     title: "How To Create Marble Staircase With Lighting",
     slug: "how-to-create-marble-staircase-with-lighting",
     date: "NOVEMBER 2, 2022",
-    comments: 0
+    comments: 0,
   },
   {
     title: "In Home Choose A Light Floor If At All Possible",
     slug: "in-home-choose-a-light-floor-if-at-all-possible",
     date: "NOVEMBER 2, 2022",
-    comments: 0
+    comments: 0,
   },
   {
     title: "How To Protect A Bathroom With Marble Surface?",
     slug: "how-to-protect-a-bathroom-with-marble-surface",
     date: "NOVEMBER 2, 2022",
-    comments: 0
+    comments: 0,
   },
   {
     title: "Choose Water Resistant Flooring At Your Home",
     slug: "choose-water-resistant-flooring-at-your-home",
     date: "NOVEMBER 2, 2022",
-    comments: 0
+    comments: 0,
   },
   {
     title: "What Kind Of Flooring Was Best For My Art Studio?",
     slug: "what-kind-of-flooring-was-best-for-my-art-studio",
     date: "NOVEMBER 2, 2022",
-    comments: 0
-  }
+    comments: 0,
+  },
 ];
 
 const recentComments = [
@@ -58,20 +69,20 @@ const recentComments = [
     author: "Peter Fernandez",
     comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     post: "How To Create Marble Staircase With Lighting",
-    date: "Nov 2, 2022"
+    date: "Nov 2, 2022",
   },
   {
     author: "John Doe",
     comment: "Ut elit tellus, luctus nec ullamcorper mattis.",
     post: "In Home Choose A Light Floor If At All Possible",
-    date: "Nov 2, 2022"
+    date: "Nov 2, 2022",
   },
   {
     author: "Admin",
     comment: "Thank you for your comment!",
     post: "How To Protect A Bathroom With Marble Surface?",
-    date: "Nov 2, 2022"
-  }
+    date: "Nov 2, 2022",
+  },
 ];
 
 const categories = [
@@ -80,24 +91,23 @@ const categories = [
   { name: "Renovation", count: 3 },
   { name: "Stone", count: 6 },
   { name: "Tiles", count: 4 },
-  { name: "Design", count: 2 }
+  { name: "Design", count: 2 },
 ];
 
 const archives = [
   { month: "November 2022", count: 10 },
-  { month: "October 2022", count: 8 }
+  { month: "October 2022", count: 8 },
 ];
 
 const tags = ["Granite", "Laminate", "Marble", "Stone"];
 
-const meta = [
-  "Log in",
-  "Entries feed",
-  "Comments feed",
-  "WordPress.org"
-];
+const meta = ["Log in", "Entries feed", "Comments feed", "WordPress.org"];
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _ = slug; // Available for dynamic content loading
@@ -106,9 +116,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 z-0">
-          <PlaceholderImage 
-            text="Blog Post Hero" 
-            height="100%" 
+          <PlaceholderImage
+            text="Blog Post Hero"
+            height="100%"
             className="brightness-[0.7]"
           />
         </div>
@@ -117,11 +127,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             In Home Choose A Light Floor If At All Possible
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm">
-            <Link href="/" className="flex items-center hover:text-amber-500 transition-colors">
+            <Link
+              href="/"
+              className="flex items-center hover:text-amber-500 transition-colors"
+            >
               <Home className="h-4 w-4 mr-1" /> Home
             </Link>
             <span className="mx-2">›</span>
-            <Link href="/blog" className="hover:text-amber-500 transition-colors">
+            <Link
+              href="/blog"
+              className="hover:text-amber-500 transition-colors"
+            >
               Blog
             </Link>
             <span className="mx-2">›</span>
@@ -148,12 +164,22 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                  leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+                  dapibus leo.
                 </p>
 
-                <h2 className="text-2xl font-bold mt-8 mb-4">Ideas For Designing A Home With Stone</h2>
+                <h2 className="text-2xl font-bold mt-8 mb-4">
+                  Ideas For Designing A Home With Stone
+                </h2>
                 <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                  leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+                  dapibus leo.
                 </p>
 
                 <div className="grid grid-cols-2 gap-6 my-8">
@@ -174,20 +200,36 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 </div>
 
                 <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                  leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+                  dapibus leo.
                 </p>
 
                 <blockquote className="border-l-4 border-amber-500 pl-4 italic my-8 py-2 text-lg">
-                  &ldquo;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.&rdquo;
+                  &ldquo;It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout.&rdquo;
                 </blockquote>
 
                 <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                  leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+                  dapibus leo.
                 </p>
 
-                <h3 className="text-xl font-bold mt-8 mb-4">Waterfall Edge Bookmatching</h3>
+                <h3 className="text-xl font-bold mt-8 mb-4">
+                  Waterfall Edge Bookmatching
+                </h3>
                 <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                  leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+                  dapibus leo.
                 </p>
 
                 <Image
@@ -199,7 +241,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 />
 
                 <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+                  leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+                  dapibus leo.
                 </p>
 
                 <div className="flex items-center gap-4 mt-12">
@@ -218,14 +264,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 </div>
 
                 <div className="flex items-center justify-between mt-8 border-t border-b py-4">
-                  <Link href="/blog/previous-post" className="flex items-center gap-2 hover:text-amber-500">
+                  <Link
+                    href="/blog/previous-post"
+                    className="flex items-center gap-2 hover:text-amber-500"
+                  >
                     <ChevronRight className="h-4 w-4 rotate-180" />
                     <div>
                       <div className="text-sm">How To Create Marble</div>
                       <div className="text-sm">Staircase With Lighting</div>
                     </div>
                   </Link>
-                  <Link href="/blog/next-post" className="flex items-center gap-2 hover:text-amber-500">
+                  <Link
+                    href="/blog/next-post"
+                    className="flex items-center gap-2 hover:text-amber-500"
+                  >
                     <div className="text-right">
                       <div className="text-sm">How To Protect A Bathroom</div>
                       <div className="text-sm">With Marble Surface</div>
@@ -254,12 +306,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-semibold">John Doe</h4>
-                        <span className="text-muted-foreground text-sm">Nov 2, 2022</span>
+                        <span className="text-muted-foreground text-sm">
+                          Nov 2, 2022
+                        </span>
                       </div>
                       <p className="text-muted-foreground mb-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut elit tellus, luctus nec ullamcorper mattis.
                       </p>
-                      <button className="text-amber-500 text-sm font-medium">Reply</button>
+                      <button className="text-amber-500 text-sm font-medium">
+                        Reply
+                      </button>
                     </div>
                   </div>
 
@@ -277,12 +334,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-semibold">Admin</h4>
-                        <span className="text-muted-foreground text-sm">Nov 2, 2022</span>
+                        <span className="text-muted-foreground text-sm">
+                          Nov 2, 2022
+                        </span>
                       </div>
                       <p className="text-muted-foreground mb-2">
                         Thank you for your comment!
                       </p>
-                      <button className="text-amber-500 text-sm font-medium">Reply</button>
+                      <button className="text-amber-500 text-sm font-medium">
+                        Reply
+                      </button>
                     </div>
                   </div>
 
@@ -300,12 +361,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-semibold">Peter Fernandez</h4>
-                        <span className="text-muted-foreground text-sm">Nov 2, 2022</span>
+                        <span className="text-muted-foreground text-sm">
+                          Nov 2, 2022
+                        </span>
                       </div>
                       <p className="text-muted-foreground mb-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut elit tellus, luctus nec ullamcorper mattis.
                       </p>
-                      <button className="text-amber-500 text-sm font-medium">Reply</button>
+                      <button className="text-amber-500 text-sm font-medium">
+                        Reply
+                      </button>
                     </div>
                   </div>
 
@@ -322,19 +388,25 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-semibold">Admin</h4>
-                        <span className="text-muted-foreground text-sm">Nov 2, 2022</span>
+                        <span className="text-muted-foreground text-sm">
+                          Nov 2, 2022
+                        </span>
                       </div>
                       <p className="text-muted-foreground mb-2">
                         Thank you for your feedback! We appreciate it.
                       </p>
-                      <button className="text-amber-500 text-sm font-medium">Reply</button>
+                      <button className="text-amber-500 text-sm font-medium">
+                        Reply
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 {/* Comment Form */}
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold mb-8">Write A Reply Or Comment</h3>
+                  <h3 className="text-2xl font-bold mb-8">
+                    Write A Reply Or Comment
+                  </h3>
                   <form className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <input
@@ -406,7 +478,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                       <p className="text-sm">
                         <span className="font-medium">{comment.author}</span> on{" "}
                         <Link
-                          href={`/blog/${comment.post.toLowerCase().replace(/\s+/g, '-')}`}
+                          href={`/blog/${comment.post
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}`}
                           className="hover:text-amber-500 transition-colors"
                         >
                           {comment.post}
@@ -422,14 +496,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 <h3 className="text-xl font-bold mb-6">Archives</h3>
                 <div className="space-y-2">
                   {archives.map((archive, index) => (
-                    <div key={index} className="flex items-center justify-between border-b pb-2">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between border-b pb-2"
+                    >
                       <Link
-                        href={`/blog/archive/${archive.month.toLowerCase().replace(/\s+/g, '-')}`}
+                        href={`/blog/archive/${archive.month
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`}
                         className="hover:text-amber-500 transition-colors"
                       >
                         {archive.month}
                       </Link>
-                      <span className="text-muted-foreground">({archive.count})</span>
+                      <span className="text-muted-foreground">
+                        ({archive.count})
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -440,14 +521,19 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 <h3 className="text-xl font-bold mb-6">Categories</h3>
                 <div className="space-y-2">
                   {categories.map((category, index) => (
-                    <div key={index} className="flex items-center justify-between border-b pb-2">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between border-b pb-2"
+                    >
                       <Link
                         href={`/blog/category/${category.name.toLowerCase()}`}
                         className="hover:text-amber-500 transition-colors"
                       >
                         {category.name}
                       </Link>
-                      <span className="text-muted-foreground">({category.count})</span>
+                      <span className="text-muted-foreground">
+                        ({category.count})
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -491,4 +577,4 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       </section>
     </>
   );
-} 
+}

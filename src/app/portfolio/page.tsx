@@ -1,82 +1,89 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
 import { useState } from "react";
-import { getLoadingStrategy, shouldLoadWithPriority } from "@/lib/image-utils";
 import LazyLoad from "@/components/LazyLoad";
 import OptimizedImage from "@/components/OptimizedImage";
 
 // Metadata moved to layout.tsx or separate metadata.ts file
 
-const categories = ["ALL", "FLOORING", "LAMINATE", "MARBLE", "STONE", "TILES", "WOODEN"];
+const categories = [
+  "ALL",
+  "FLOORING",
+  "LAMINATE",
+  "MARBLE",
+  "STONE",
+  "TILES",
+  "WOODEN",
+];
 
 const portfolioItems = [
   {
     title: "Modern Kitchen Design",
     image: "/images/portfolio/kitchen-1.jpg",
     category: "MARBLE",
-    link: "modern-kitchen-design"
+    link: "modern-kitchen-design",
   },
   {
     title: "Luxury Office Reception",
     image: "/images/portfolio/office-1.jpg",
     category: "STONE",
-    link: "luxury-office-reception"
+    link: "luxury-office-reception",
   },
   {
     title: "Contemporary Bathroom",
     image: "/images/portfolio/bathroom-1.jpg",
     category: "TILES",
-    link: "contemporary-bathroom"
+    link: "contemporary-bathroom",
   },
   {
     title: "Elegant Living Room",
     image: "/images/portfolio/living-1.jpg",
     category: "FLOORING",
-    link: "elegant-living-room"
+    link: "elegant-living-room",
   },
   {
     title: "Marble Wall Feature",
     image: "/images/portfolio/wall-1.jpg",
     category: "MARBLE",
-    link: "marble-wall-feature"
+    link: "marble-wall-feature",
   },
   {
     title: "Modern Bedroom",
     image: "/images/portfolio/bedroom-1.jpg",
     category: "WOODEN",
-    link: "modern-bedroom"
+    link: "modern-bedroom",
   },
   {
     title: "Hotel Lobby",
     image: "/images/portfolio/lobby-1.jpg",
     category: "MARBLE",
-    link: "hotel-lobby"
+    link: "hotel-lobby",
   },
   {
     title: "Restaurant Interior",
     image: "/images/portfolio/restaurant-1.jpg",
     category: "STONE",
-    link: "restaurant-interior"
+    link: "restaurant-interior",
   },
   {
     title: "Spa Bathroom",
     image: "/images/portfolio/spa-1.jpg",
     category: "TILES",
-    link: "spa-bathroom"
-  }
+    link: "spa-bathroom",
+  },
 ];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("ALL");
 
   // Filter items based on active category
-  const filteredItems = activeCategory === "ALL" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "ALL"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
     <>
@@ -95,11 +102,12 @@ export default function Portfolio() {
           />
         </div>
         <div className="relative z-10 container max-w-screen-xl mx-auto px-4 py-32 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Masonry
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Masonry</h1>
           <div className="flex items-center justify-center gap-2 text-sm">
-            <Link href="/" className="flex items-center hover:text-amber-500 transition-colors">
+            <Link
+              href="/"
+              className="flex items-center hover:text-amber-500 transition-colors"
+            >
               <Home className="h-4 w-4 mr-1" /> Home
             </Link>
             <span className="mx-2">›</span>
@@ -118,9 +126,9 @@ export default function Portfolio() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 text-sm font-medium transition-colors ${
-                  activeCategory === category 
-                    ? 'bg-amber-500 text-white rounded' 
-                    : 'hover:text-amber-500'
+                  activeCategory === category
+                    ? "bg-amber-500 text-white rounded"
+                    : "hover:text-amber-500"
                 }`}
               >
                 {category}
@@ -129,13 +137,20 @@ export default function Portfolio() {
           </div>
 
           {/* Portfolio Grid */}
-          <LazyLoad 
+          <LazyLoad
             threshold={0.05}
             rootMargin="200px 0px"
             placeholder={
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[500px] animate-pulse">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="bg-gray-200 rounded-lg" style={{ height: i % 3 === 0 ? '300px' : i % 3 === 1 ? '400px' : '350px' }}></div>
+                  <div
+                    key={i}
+                    className="bg-gray-200 rounded-lg"
+                    style={{
+                      height:
+                        i % 3 === 0 ? "300px" : i % 3 === 1 ? "400px" : "350px",
+                    }}
+                  ></div>
                 ))}
               </div>
             }
@@ -146,8 +161,13 @@ export default function Portfolio() {
                   key={index}
                   href={`/portfolio/${item.link}`}
                   className="group relative block overflow-hidden rounded-lg"
-                  style={{ 
-                    height: index % 3 === 0 ? '300px' : index % 3 === 1 ? '400px' : '350px'
+                  style={{
+                    height:
+                      index % 3 === 0
+                        ? "300px"
+                        : index % 3 === 1
+                        ? "400px"
+                        : "350px",
                   }}
                 >
                   <OptimizedImage
@@ -165,9 +185,7 @@ export default function Portfolio() {
                       <div className="text-sm font-medium text-amber-500 mb-2">
                         {item.category}
                       </div>
-                      <h3 className="text-xl font-bold">
-                        {item.title}
-                      </h3>
+                      <h3 className="text-xl font-bold">{item.title}</h3>
                     </div>
                   </div>
                 </Link>
@@ -177,7 +195,11 @@ export default function Portfolio() {
 
           {/* Load More Button */}
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="font-medium border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white">
+            <Button
+              variant="outline"
+              size="lg"
+              className="font-medium border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white"
+            >
               LOAD MORE <span className="ml-2">→</span>
             </Button>
           </div>

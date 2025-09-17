@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 
 interface LazyLoadProps {
   children: React.ReactNode;
@@ -16,16 +16,15 @@ interface LazyLoadProps {
 export default function LazyLoad({
   children,
   threshold = 0.1,
-  rootMargin = '200px 0px',
+  rootMargin = "200px 0px",
   placeholder = null,
 }: LazyLoadProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasRendered, setHasRendered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Skip if already visible or if IntersectionObserver is not available
-    if (isVisible || typeof IntersectionObserver === 'undefined') {
+    if (isVisible || typeof IntersectionObserver === "undefined") {
       setIsVisible(true);
       return;
     }
@@ -49,16 +48,5 @@ export default function LazyLoad({
     };
   }, [isVisible, threshold, rootMargin]);
 
-  // Set hasRendered to true after the first render
-  useEffect(() => {
-    if (isVisible) {
-      setHasRendered(true);
-    }
-  }, [isVisible]);
-
-  return (
-    <div ref={ref}>
-      {isVisible ? children : placeholder}
-    </div>
-  );
+  return <div ref={ref}>{isVisible ? children : placeholder}</div>;
 }

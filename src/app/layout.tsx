@@ -10,16 +10,6 @@ export const metadata: Metadata = {
   title: "Rishi Exports - Premium Marble Exporters",
   description:
     "Premium quality marble exporters providing natural stone products worldwide. Explore our wide range of marble varieties sourced from the finest quarries.",
-  keywords:
-    "marble exports, natural stone, marble suppliers, premium marble, stone exporters, Indian marble",
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
 };
 
 export default function RootLayout({
@@ -45,7 +35,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <div className="flex min-h-screen flex-col">
-          <Navbar />  
+          <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
