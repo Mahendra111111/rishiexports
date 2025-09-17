@@ -43,9 +43,9 @@ export default function RootLayout({
           content="noindex, nofollow, noarchive, nosnippet, noimageindex"
         />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <div className="flex min-h-screen flex-col">
-          <Navbar />
+          <Navbar />  
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
