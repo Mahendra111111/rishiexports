@@ -3,11 +3,11 @@ module.exports = {
     {
       name: "rishiexports",
       script: "npm",
-      args: "start -- -p 3010",
+      args: "start -- -p 3070",
       cwd: "./",
       env: {
         NODE_ENV: "production",
-        PORT: 3010,
+        PORT: 3070,
       },
       instances: 1,
       exec_mode: "fork",
@@ -16,7 +16,7 @@ module.exports = {
       error_file: "./logs/err.log",
       out_file: "./logs/out.log",
       log_file: "./logs/combined.log",
-      time: true
-    }
-  ]
+      time: true,
+    },
+  ],
 };
