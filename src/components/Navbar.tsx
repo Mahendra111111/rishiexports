@@ -13,6 +13,7 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -119,6 +120,8 @@ export default function Navbar() {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0">
+              {/* Adding SheetTitle for accessibility, visually hidden */}
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                   <Link

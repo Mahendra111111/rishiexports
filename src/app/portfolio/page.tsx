@@ -1,23 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
-import type { Metadata } from "next";
+import { useState } from "react";
+import { getLoadingStrategy, shouldLoadWithPriority } from "@/lib/image-utils";
+import LazyLoad from "@/components/LazyLoad";
+import OptimizedImage from "@/components/OptimizedImage";
 
-
-export const metadata: Metadata = {
-  title: "Portfolio | Marblex - Premium Marble Exporters",
-  description: "Explore our portfolio of marble and natural stone projects across residential, commercial, and architectural applications.",
-  keywords: "marble portfolio, stone projects, marble installations, natural stone projects",
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
-};
+// Metadata moved to layout.tsx or separate metadata.ts file
 
 const categories = ["ALL", "FLOORING", "LAMINATE", "MARBLE", "STONE", "TILES", "WOODEN"];
 
@@ -79,15 +71,26 @@ const portfolioItems = [
 ];
 
 export default function Portfolio() {
+  const [activeCategory, setActiveCategory] = useState("ALL");
+
+  // Filter items based on active category
+  const filteredItems = activeCategory === "ALL" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === activeCategory);
+
   return (
     <>
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 z-0">
-          <Image
+          <OptimizedImage
             src="/images/Portfolio banner.jpg"
             alt="Portfolio Hero"
             fill
+            isPriority={true}
+            isBelowFold={false}
+            optimizationQuality={85}
+            usePlaceholder={true}
             className="object-cover brightness-[0.7]"
           />
         </div>
@@ -110,10 +113,15 @@ export default function Portfolio() {
         <div className="container max-w-screen-xl mx-auto px-4">
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <button
                 key={category}
-                className={`px-6 py-2 text-sm font-medium transition-colors ${index === 0 ? 'bg-amber-500 text-white rounded' : 'hover:text-amber-500'}`}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-2 text-sm font-medium transition-colors ${
+                  activeCategory === category 
+                    ? 'bg-amber-500 text-white rounded' 
+                    : 'hover:text-amber-500'
+                }`}
               >
                 {category}
               </button>
@@ -121,35 +129,51 @@ export default function Portfolio() {
           </div>
 
           {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioItems.map((item, index) => (
-              <Link
-                key={index}
-                href={`/portfolio/${item.link}`}
-                className="group relative block overflow-hidden rounded-lg"
-                style={{ 
-                  height: index % 3 === 0 ? '300px' : index % 3 === 1 ? '400px' : '350px'
-                }}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="text-sm font-medium text-amber-500 mb-2">
-                      {item.category}
+          <LazyLoad 
+            threshold={0.05}
+            rootMargin="200px 0px"
+            placeholder={
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[500px] animate-pulse">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="bg-gray-200 rounded-lg" style={{ height: i % 3 === 0 ? '300px' : i % 3 === 1 ? '400px' : '350px' }}></div>
+                ))}
+              </div>
+            }
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={`/portfolio/${item.link}`}
+                  className="group relative block overflow-hidden rounded-lg"
+                  style={{ 
+                    height: index % 3 === 0 ? '300px' : index % 3 === 1 ? '400px' : '350px'
+                  }}
+                >
+                  <OptimizedImage
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    isPriority={index < 3}
+                    isBelowFold={true}
+                    optimizationQuality={80}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <div className="text-sm font-medium text-amber-500 mb-2">
+                        {item.category}
+                      </div>
+                      <h3 className="text-xl font-bold">
+                        {item.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xl font-bold">
-                      {item.title}
-                    </h3>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
+          </LazyLoad>
 
           {/* Load More Button */}
           <div className="text-center mt-12">
