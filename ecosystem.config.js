@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "rishiexports",
       script: "npm",
-      args: "start -- -p 3070",
+      args: "start",
       cwd: "./",
       env: {
         NODE_ENV: "production",
