@@ -1,10 +1,50 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
+  const testimonials = [
+    {
+      image: "/images/testimonial-image.jpg",
+      quote: "Rishi Exports should look for ones that are specific, detailed, and highlight the unique benefits of working with the company. This can include aspects such as the quality of the marble products and excellent customer service Rishi Exports can these reviews to differentiate itself",
+      name: "Arun Kumar Reddy",
+      title: "PRODUCTION MANAGER",
+    },
+    {
+      image: "/images/Rohan Sharma.jpeg",
+      quote: "I am extremely satisfied with the quality of marble from Rishi Exports. The customer service was excellent, and they helped me choose the perfect material for my kitchen countertop. Highly recommended!",
+      name: "Rohan Sharma",
+      title: "INTERIOR DESIGNER",
+    },
+    {
+      image: "/images/Priya Nair.jpg",
+      quote: "Rishi Exports delivered beyond my expectations. The natural stone panels are stunning and have transformed my office reception area. Their team was professional and efficient throughout the entire process.",
+      name: "Priya Nair",
+      title: "Architect",
+    },
+  ];
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonialIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextTestimonial = () => {
+    setCurrentTestimonialIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const currentTestimonial = testimonials[currentTestimonialIndex];
+
   return (
     <>
       {/* Hero Section with Video Background */}
@@ -259,7 +299,7 @@ export default function Home() {
               <div className="md:col-span-1">
                 <div className="relative h-[300px] rounded-lg overflow-hidden">
                   <Image
-                    src="/images/testimonial-image.jpg"
+                    src={currentTestimonial.image}
                     alt="Testimonial"
                     fill
                     className="object-cover"
@@ -269,31 +309,44 @@ export default function Home() {
               <div className="md:col-span-2 text-center md:text-left">
                 <div className="mb-8">
                   <p className="text-lg text-muted-foreground">
-                    Rishi Exports should look for ones that are specific,
-                    detailed, and highlight the unique benefits of working with
-                    the company. This can include aspects such as the quality of
-                    the marble products and excellent customer service Rishi
-                    Exports can these reviews to differentiate itself
+                    {currentTestimonial.quote}
                   </p>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-xl font-semibold">Arun Kumar Reddy</h4>
-                  <p className="text-amber-500">PRODUCTION MANAGER</p>
+                  <h4 className="text-xl font-semibold">
+                    {currentTestimonial.name}
+                  </h4>
+                  <p className="text-amber-500">
+                    {currentTestimonial.title}
+                  </p>
                 </div>
 
                 <div className="flex justify-center md:justify-start gap-2">
-                  <div className="w-2 h-2 rounded-full bg-amber-500"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                  {testimonials.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full ${
+                        index === currentTestimonialIndex
+                          ? "bg-amber-500"
+                          : "bg-gray-300"
+                      }`}
+                    ></div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <button className="absolute md:left-[-60px] left-[-10px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-colors">
+            <button
+              onClick={handlePrevTestimonial}
+              className="absolute md:left-[-60px] left-[-10px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-colors"
+            >
               <ArrowRight className="h-5 w-5 rotate-180" />
             </button>
-            <button className="absolute md:right-[-60px] right-[-10px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-colors">
+            <button
+              onClick={handleNextTestimonial}
+              className="absolute md:right-[-60px] right-[-10px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-colors"
+            >
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>
