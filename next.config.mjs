@@ -3,7 +3,8 @@ const nextConfig = {
   output: "export",
   // Disable automatic metadata processing to avoid path issues
   skipTrailingSlashRedirect: true,
-  skipMiddlewareUrlNormalize: true,
+  skipProxyUrlNormalize: true,
+  turbopack: {},
   // Disable favicon and other metadata routes processing to avoid path issues
   webpack: (config, { isServer }) => {
     if (!isServer) {
